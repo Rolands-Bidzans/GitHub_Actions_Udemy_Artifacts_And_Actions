@@ -20,9 +20,10 @@ jobs:
         with:
           name: dist-files
           # here we specify the files that will be stored in artifacts
-          path: |
-            dist
-            package.json
+          path: dist
+#          path: |
+#            dist
+#            package.json
   build:
     needs: test
     runs-on: ubuntu-latest
