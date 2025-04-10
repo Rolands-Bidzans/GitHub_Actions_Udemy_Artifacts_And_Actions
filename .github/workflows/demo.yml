@@ -15,6 +15,15 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
+      # To store artifacts
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: dist-files
+          # here we specify the files that will be stored in artifacts
+          path: |
+            dist
+            package.json
   build:
     needs: test
     runs-on: ubuntu-latest
