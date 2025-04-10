@@ -17,7 +17,6 @@ jobs:
         run: npm run test
       # To store artifacts
       - uses: actions/upload-artifact@v4
-        if: failure()
         with:
           name: dist-files
           # here we specify the files that will be stored in artifacts
